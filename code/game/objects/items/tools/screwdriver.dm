@@ -78,6 +78,11 @@
 	if(user.has_trait(TRAIT_PACIFISM))
 		to_chat(user, "<span class='warning'>You don't want to harm [M]!</span>")
 		return
+	if(ismommi(user))
+		var/mob/living/silicon/robot/mommi/R = user
+		if(!R.can_interfere(M))
+			to_chat(user, "<span class='warning'>Your programming forbis this action.</span>")
+			return
 	if(user.has_trait(TRAIT_CLUMSY) && prob(50))
 		M = user
 	return eyestab(M,user)

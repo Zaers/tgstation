@@ -13,6 +13,13 @@
 	var/datum/ai_laws/laws = new()
 	var/force_replace_ai_name = FALSE
 	var/overrides_aicore_laws = FALSE // Whether the laws on the MMI, if any, override possible pre-existing laws loaded on the AI core.
+	var/list/mommi_assembly_parts = list(
+		/obj/item/stock_parts/cell = 1,
+		/obj/item/bodypart/l_leg/robot = 2,
+		/obj/item/bodypart/r_leg/robot = 2,
+		/obj/item/bodypart/r_arm/robot = 1,
+		/obj/item/bodypart/l_arm/robot = 1)
+
 
 /obj/item/mmi/update_icon()
 	if(!brain)
@@ -35,8 +42,104 @@
 	radio.broadcasting = FALSE //researching radio mmis turned the robofabs into radios because this didnt start as 0.
 	laws.set_laws_config()
 
+
+/obj/item/mmi/proc/try_handling_mommi_construction(var/obj/item/O as obj, var/mob/user as mob)
+	if (ismommi(user))
+		return //no
+	if(O.tool_behaviour == TOOL_SCREWDRIVER)
+		var/obj/item/mmi/M = src
+		var/short = 0
+		for(var/t in mommi_assembly_parts)
+			var/cc=contents_count(t)
+			var/req=mommi_assembly_parts[t]
+
+			if(cc<req)
+				var/obj/item/temppart = new t(src)
+				to_chat(user, "<span class='warning'>You're short [req-cc] [temppart.name]\s.</span>") //>byond text macro
+				qdel(temppart)
+				short = 1
+		if(short)
+			return TRUE
+
+		var/mob/living/brain/BM = M.brainmob
+		if(!BM)
+			to_chat(user, "<span class='warning'>The MMI indicates that their mind is completely unresponsive; there's no point!</span>")
+			return TRUE
+		if(!BM.key || !BM.mind)
+			to_chat(user, "<span class='warning'>The MMI indicates that their mind is completely unresponsive; there's no point!</span>")
+			return TRUE
+
+		if(!BM.client) //braindead
+			to_chat(user, "<span class='warning'>The MMI indicates that their mind is currently inactive; it might change!</span>")
+			return TRUE
+
+		if(BM.stat == DEAD || BM.suiciding || (M.brain && (M.brain.brain_death || M.brain.suicided)))
+			to_chat(user, "<span class='warning'>Sticking a dead brain into the frame would sort of defeat the purpose!</span>")
+			return TRUE
+
+		if(M.brain?.damaged_brain)
+			to_chat(user, "<span class='warning'>The MMI indicates that the brain is damaged!</span>")
+			return TRUE
+
+		if(is_banned_from(BM?.ckey, "Cyborg") || QDELETED(src) || QDELETED(BM) || QDELETED(user) || QDELETED(M) || !Adjacent(user))
+			if(!QDELETED(M))
+				to_chat(user, "<span class='warning'>This [M.name] does not seem to fit!</span>")
+			return TRUE
+
+
+			//canmove = 0
+		icon = null
+		invisibility = 101
+
+
+		var/mob/living/silicon/robot/mommi/Mo = new /mob/living/silicon/robot/mommi(get_turf(loc))
+		if(!Mo)	return
+
+		Mo.invisibility = 0
+		//M.custom_name = created_name
+		Mo.choose_icon()
+		brainmob.mind.transfer_to(M)
+
+		if(Mo.mind && Mo.mind.special_role)
+			Mo.mind.store_memory("In case you look at this after being borged, the objectives are only here until I find a way to make them not show up for you, as I can't simply delete them without screwing up round-end reporting. --NeoFite")
+
+		Mo.job = "Cyborg"
+
+		Mo.cell = locate(/obj/item/stock_parts/cell) in contents
+		Mo.cell.forceMove(Mo)
+		src.loc = Mo//Should fix cybros run time erroring when blown up. It got deleted before, along with the frame.
+		Mo.mmi = src
+
+		Mo.initialize_killswitch() // Confine roboticist-build MoMMI to their z-level/service the station.
+		return TRUE
+	for(var/t in mommi_assembly_parts)
+		if(istype(O,t))
+			var/cc=contents_count(t)
+			if(cc<mommi_assembly_parts[t])
+				if(!brainmob)
+					to_chat(user , "<span class='warning'>Why are you sticking robot legs on an empty [src], you idiot?</span>")
+					return TRUE
+				O.forceMove(src)
+				user.transferItemToLoc(O, src)
+				to_chat(user ,"<span class='notice'>You successfully add \the [O] to the contraption,</span>")
+				return TRUE
+			else if(cc==mommi_assembly_parts[t])
+				to_chat(user ,"<span class='warning'>You have enough of these.</span>")
+				return TRUE
+	return FALSE
+
+/obj/item/mmi/proc/contents_count(var/type)
+	var/c=0
+	for(var/O in contents)
+		if(istype(O,type))
+			c++
+	return c
+
+
 /obj/item/mmi/attackby(obj/item/O, mob/user, params)
 	user.changeNext_move(CLICK_CD_MELEE)
+	if(try_handling_mommi_construction(O, user))
+		return
 	if(istype(O, /obj/item/organ/brain)) //Time to stick a brain in it --NEO
 		var/obj/item/organ/brain/newbrain = O
 		if(brain)
@@ -205,6 +308,8 @@
 
 		else
 			to_chat(user, "<span class='notice'>The MMI indicates the brain is active.</span>")
+
+
 
 /obj/item/mmi/relaymove(mob/user)
 	return //so that the MMI won't get a warning about not being able to move if it tries to move

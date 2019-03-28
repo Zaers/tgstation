@@ -444,3 +444,7 @@ GLOBAL_LIST_INIT(pda_styles, list(MONO, VT, ORBITRON, SHARE))
 #define DICE_NOT_RIGGED 1
 #define DICE_BASICALLY_RIGGED 2
 #define DICE_TOTALLY_RIGGED 3
+
+//mommi shit
+#define INV_SLOT_SIGHT "sight_slot"
+#define INV_SLOT_TOOL "tool_slot"

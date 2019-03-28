@@ -42,6 +42,8 @@
 
 #define MODE_VOCALCORDS "cords"
 #define MODE_KEY_VOCALCORDS "x"
+#define MODE_MOMMI "mommi"
+#define MODE_KEY_MOMMI "d"
 
 #define MODE_MONKEY "monkeyhive"
 

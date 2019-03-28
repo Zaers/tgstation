@@ -108,6 +108,15 @@
 		return FALSE
 	return FALSE
 
+/datum/saymode/mommi
+	key = MODE_KEY_MOMMI
+	mode = MODE_MOMMI
+
+/datum/saymode/mommi/handle_message(mob/living/user, message, datum/language/language)
+	if(ismommi(user))
+		user.mommi_talk(message)
+		return FALSE
+	return FALSE
 
 /datum/saymode/holopad
 	key = "h"

@@ -26,6 +26,12 @@
 	user.visible_message("<span class='suicide'>[user] is trying to upload [user.p_them()]self into [src]! That's not going to work out well!</span>")
 	return BRUTELOSS
 
+/obj/item/aicard/attack_hand(mob/user as mob)
+	if (is_keeper(user))
+		to_chat(user, "Your programming prevents you from picking [src] up.")
+		return
+	else ..(user)
+
 /obj/item/aicard/afterattack(atom/target, mob/user, proximity)
 	. = ..()
 	if(!proximity || !target)
