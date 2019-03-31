@@ -1,5 +1,4 @@
 <!-- Most valid html will work in here, excluding images. -->
 
-<h1>Welcome to Space Station 13!</h1>
+<i>We're currently using the nuTG codebase, If theres anything wrong or you simply wish to recommend a change, please post an issue on the github or simply complain to the admins via adminhelp.</i>
 
-<i>This server is running a /tg/station 13 Git build.</i>

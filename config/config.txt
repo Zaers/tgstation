@@ -14,10 +14,10 @@ $include antag_rep.txt
 # There are various options which are hard-locked for security reasons.
 
 ## Server name: This appears at the top of the screen in-game and in the BYOND hub. Uncomment and replace 'tgstation' with the name of your choice.
-# SERVERNAME tgstation
+# SERVERNAME AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 
 ## Server SQL name: This is the name used to identify the server to the SQL DB, distinct from SERVERNAME as it must be at most 32 characters.
-# SERVERSQLNAME tgstation
+# SERVERSQLNAME ss13
 
 ## Station name: The name of the station as it is referred to in-game. If commented out, the game will generate a random name instead.
 STATIONNAME Space Station 13
@@ -236,7 +236,7 @@ CHECK_RANDOMIZER
 # RULESURL http://www.tgstation13.org/wiki/Rules
 
 ## Github address
-# GITHUBURL https://www.github.com/tgstation/tgstation
+# GITHUBURL https://github.com/NegroidRemover/tgstation
 
 ## Round specific stats address
 ## Link to round specific parsed logs; IE statbus. It is appended with the RoundID automatically by ticker/Reboot()
