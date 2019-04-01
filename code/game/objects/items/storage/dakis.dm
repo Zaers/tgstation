@@ -9,9 +9,9 @@
 	desc = "A large pillow depicting someone in a compromising position. Featuring as many dimensions as you."
 	icon = 'icons/obj/daki.dmi'
 	icon_state = "daki_base"
-	slot_flags = SLOT_BACK
+	slot_flags = ITEM_SLOT_BACK
 
-/obj/item/storage/dakis/ComponentInitialize()
+/obj/item/storage/daki/ComponentInitialize()
 	. = ..()
 	GET_COMPONENT(STR, /datum/component/storage)
 	STR.max_combined_w_class = 20
