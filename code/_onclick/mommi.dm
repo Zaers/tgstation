@@ -47,33 +47,29 @@
 		A.attack_mommi(src)
 		return
 
-	// buckled cannot prevent machine interlinking but stops arm movement
-	if( buckled )
-		return
-
-	if(W == A)
-		W.attack_self(src)
-		return
-
-	if(A == loc || (A in loc) || (A in contents))
-		// No adjacency checks
-		var/resolved = A.attackby(W,src, params)
-		if(!resolved && A && W)
-			W.afterattack(A,src,1,params)
-		return
-
-	if(!isturf(loc))
-		return
-
-	if(isturf(A) || isturf(A.loc))
-		if(A.Adjacent(src)) // see adjacent.dm
-			var/resolved = A.attackby(W, src, params)
-			if(!resolved && A && W)
-				W.afterattack(A, src, 1, params)
+	if(W)
+		// buckled cannot prevent machine interlinking but stops arm movement
+		if( buckled || incapacitated())
 			return
-		else
-			W.afterattack(A, src, 0, params)
+
+		if(W == A)
+			W.attack_self(src)
 			return
+
+		if(A == loc || (A in loc) || (A in contents) || A.loc in contents)
+			W.melee_attack_chain(src, A, params)
+			return
+
+		if(!isturf(loc))
+			return
+
+		if(isturf(A) || isturf(A.loc) || (A.loc && isturf(A.loc.loc)))
+			if(A.Adjacent(src)) // see adjacent.dm
+				W.melee_attack_chain(src, A, params)
+				return
+			else
+				W.afterattack(A, src, 0, params)
+				return
 	return
 
 //Middle click toggles their module
