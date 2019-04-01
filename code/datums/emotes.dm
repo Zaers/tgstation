@@ -65,8 +65,9 @@
 	msg = "<b>[user]</b> " + msg
 
 	var/tmp_sound = get_sound(user)
-	if(tmp_sound && (!only_forced_audio || !intentional))
+	if(tmp_sound && (!only_forced_audio || !intentional) && (user.sound_time + user.sound_delay) <= world.time)
 		playsound(user, tmp_sound, 50, vary)
+		user.sound_time = world.time
 
 	for(var/mob/M in GLOB.dead_mob_list)
 		if(!M.client || isnewplayer(M))

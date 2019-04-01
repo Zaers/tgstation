@@ -99,6 +99,9 @@
 
 	var/list/progressbars = null	//for stacking do_after bars
 
+	var/sound_time = 0 //sound emote stuff (aka. the ree fix 4 years later)
+	var/sound_delay = 10 //1 second should be enough between sounds
+
 	var/list/mousemove_intercept_objects
 
 	var/datum/click_intercept

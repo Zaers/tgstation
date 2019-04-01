@@ -20,9 +20,17 @@
 	var/mode = CIRCULATOR_HOT
 	var/obj/machinery/power/generator/generator
 
+/obj/machinery/atmospherics/components/binary/circulator/flipped
+	icon_state = "circ-off-1"
+	flipped = TRUE
+
 //default cold circ for mappers
 /obj/machinery/atmospherics/components/binary/circulator/cold
 	mode = CIRCULATOR_COLD
+
+/obj/machinery/atmospherics/components/binary/circulator/cold/flipped
+	icon_state = "circ-off-1"
+	flipped = TRUE
 
 /obj/machinery/atmospherics/components/binary/circulator/Initialize(mapload)
 	.=..()

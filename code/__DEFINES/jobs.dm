@@ -12,6 +12,7 @@
 #define ROBOTICIST		(1<<8)
 #define AI_JF			(1<<9)
 #define CYBORG			(1<<10)
+#define MOMMI			(1<<11)
 
 
 #define MEDSCI			(1<<1)
@@ -86,3 +87,4 @@
 #define JOB_DISPLAY_ORDER_SECURITY_OFFICER 30
 #define JOB_DISPLAY_ORDER_AI 31
 #define JOB_DISPLAY_ORDER_CYBORG 32
+#define JOB_DISPLAY_ORDER_MOMMI 33

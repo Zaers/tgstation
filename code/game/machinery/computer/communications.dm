@@ -57,6 +57,9 @@
 	if(!is_station_level(z) && !is_reserved_level(z)) //Can only use in transit and on SS13
 		to_chat(usr, "<span class='boldannounce'>Unable to establish a connection</span>: \black You're too far away from the station!")
 		return
+	if (is_keeper(usr))
+		to_chat(usr, "Your programming forbids interacting with [src].")
+		return
 	usr.set_machine(src)
 
 

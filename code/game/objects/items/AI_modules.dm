@@ -24,6 +24,12 @@ AI MODULES
 	var/bypass_law_amt_check = 0
 	materials = list(MAT_GOLD=50)
 
+/obj/item/aiModule/attack_hand(mob/user as mob)
+	if(is_keeper(user))
+		to_chat(user, "Your programming prevents you from picking [src] up.")
+		return
+	else ..(user)
+
 /obj/item/aiModule/examine(var/mob/user as mob)
 	..()
 	if(Adjacent(user))

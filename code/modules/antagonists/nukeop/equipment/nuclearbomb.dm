@@ -585,6 +585,13 @@ This is here to make the tiles around the station mininuke change when it's arme
 		last_disk_move = world.time
 		START_PROCESSING(SSobj, src)
 
+
+/obj/item/disk/nuclear/attack_hand(mob/user as mob)
+	if(is_keeper(user))
+		to_chat(user, "Your programming prevents you from picking [src] up.")
+		return
+	else ..(user)
+
 /obj/item/disk/nuclear/ComponentInitialize()
 	. = ..()
 	AddComponent(/datum/component/stationloving, !fake)

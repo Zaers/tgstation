@@ -165,7 +165,8 @@
 
 	equippable_hats = typecacheof(equippable_hats)
 
-	playsound(loc, 'sound/voice/liveagain.ogg', 75, 1)
+	if(!ismommi(src))
+		playsound(loc, 'sound/voice/liveagain.ogg', 75, 1)
 	aicamera = new/obj/item/camera/siliconcam/robot_camera(src)
 	toner = tonermax
 	diag_hud_set_borgcell()
@@ -884,6 +885,8 @@
 
 /mob/living/silicon/robot/updatehealth()
 	..()
+	if(ismommi(src)) //don't care about that stuff
+		return
 	if(health < maxHealth*0.5) //Gradual break down of modules as more damage is sustained
 		if(uneq_module(held_items[3]))
 			playsound(loc, 'sound/machines/warning-buzzer.ogg', 50, 1, 1)

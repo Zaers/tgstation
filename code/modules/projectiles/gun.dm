@@ -1,4 +1,4 @@
-
+dex
 #define DUALWIELD_PENALTY_EXTRA_MULTIPLIER 1.4
 
 /obj/item/gun
@@ -248,6 +248,9 @@
 	if(!user || !firing_burst)
 		firing_burst = FALSE
 		return FALSE
+	if (ismommi(user))
+		to_chat(user, "You lack the dexterity to fire [src].")
+		return FALSE
 	if(!issilicon(user))
 		if(iteration > 1 && !(user.is_holding(src))) //for burst firing
 			firing_burst = FALSE
@@ -286,6 +289,9 @@
 
 	if(semicd)
 		return
+	if (ismommi(user))
+		to_chat(user, "You lack the dexterity to fire [src].")
+		return FALSE
 
 	var/sprd = 0
 	var/randomized_gun_spread = 0

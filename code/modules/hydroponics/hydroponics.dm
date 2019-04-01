@@ -837,7 +837,7 @@
 	. = ..()
 	if(.)
 		return
-	if(issilicon(user)) //How does AI know what plant is?
+	if(issilicon(user) && !ismommi(user)) //How does AI know what plant is? //mommis DO get to interact with this stuff
 		return
 	if(harvest)
 		return myseed.harvest(user)
