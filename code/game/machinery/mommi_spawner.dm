@@ -36,7 +36,7 @@
 	uses = 1
 	ghost_usable = TRUE
 	mob_type = /mob/living/silicon/robot/mommi
-	banType = "mommi"
+	banType = "MoMMI"
 	flavour_text = "<span class='big bold'>You are a repair drone assigned to this sector of space.</b>"
 	assignedrole = "Repair Drone"
 	var/obj/machinery/mommi_spawner/master
