@@ -102,6 +102,9 @@
 			playsound(src, 'sound/effects/refill.ogg', 50, 1)
 			W.update_icon()
 		else
+			if(is_keeper(user))
+				to_chat(user, "Your programming prevents you from doing that.")
+				return
 			user.visible_message("<span class='warning'>[user] catastrophically fails at refilling [user.p_their()] [W.name]!</span>", "<span class='userdanger'>That was stupid of you.</span>")
 
 			log_bomber(user, "detonated a", src, "via welding tool")

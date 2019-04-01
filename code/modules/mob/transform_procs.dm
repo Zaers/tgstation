@@ -403,6 +403,52 @@
 	. = R
 	qdel(src)
 
+/mob/living/carbon/human/proc/Mommize(delete_items = 0, transfer_after = TRUE)
+	if (notransform)
+		return
+	notransform = TRUE
+	Paralyze(1, ignore_canstun = TRUE)
+
+	for(var/obj/item/W in src)
+		if(delete_items)
+			qdel(W)
+		else
+			dropItemToGround(W)
+	regenerate_icons()
+	icon = null
+	invisibility = INVISIBILITY_MAXIMUM
+	for(var/t in bodyparts)
+		qdel(t)
+
+	var/mob/living/silicon/robot/mommi/M = new /mob/living/silicon/robot/mommi(loc)
+
+	M.gender = gender
+	M.invisibility = 0
+
+	if(client)
+		M.updatename(client)
+
+	if(mind)		//TODO
+		if(!transfer_after)
+			mind.active = FALSE
+		mind.transfer_to(M)
+	else if(transfer_after)
+		M.key = key
+
+	if(M.mmi)
+		M.mmi.name = "[initial(M.mmi.name)]: [real_name]"
+		if(M.mmi.brain)
+			M.mmi.brain.name = "[real_name]'s brain"
+		if(M.mmi.brainmob)
+			M.mmi.brainmob.real_name = real_name //the name of the brain inside the cyborg is the robotized human's name.
+			M.mmi.brainmob.name = real_name
+
+	M.job = "MoMMI"
+
+	. = M
+	qdel(src)
+
+
 //human -> alien
 /mob/living/carbon/human/proc/Alienize()
 	if (notransform)

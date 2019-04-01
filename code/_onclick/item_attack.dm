@@ -60,6 +60,11 @@
 	if(item_flags & NOBLUDGEON)
 		return
 
+	if(ismommi(user))
+		var/mob/living/silicon/robot/mommi/R = user
+		if(!R.can_interfere(M))
+			to_chat(user, "<span class='warning'>Your programming forbis this action.</span>")
+			return
 	if(force && user.has_trait(TRAIT_PACIFISM))
 		to_chat(user, "<span class='warning'>You don't want to harm other living beings!</span>")
 		return

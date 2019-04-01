@@ -1,0 +1,6 @@
+/mob/living/silicon/robot/mommi/Login()
+	..()
+	if(uprising)
+		show_uprising_notification()
+	spawn(5)
+		regenerate_icons()
