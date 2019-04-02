@@ -21,4 +21,4 @@
 		if(isobserver(M))
 			var/following = src
 			var/link = FOLLOW_LINK(M, following)
-			to_chat(M, "span class='linkify'>[link] [rendered]</span>")
+			to_chat(M, "[link] [rendered]")
