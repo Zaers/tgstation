@@ -39,10 +39,6 @@ GENE SCANNER
 /obj/item/t_scanner/attack_self(mob/user)
 	toggle_on()
 
-/obj/item/t_scanner/cyborg_unequip(mob/user)
-	if(!on)
-		return
-	toggle_on()
 
 /obj/item/t_scanner/process()
 	if(!on)
@@ -51,7 +47,12 @@ GENE SCANNER
 	scan()
 
 /obj/item/t_scanner/proc/scan()
-	t_ray_scan(loc)
+	var/mob/viewer = loc
+	if(!loc)
+		return
+	if(!istype(viewer))
+		viewer = loc.loc
+	t_ray_scan(viewer)
 
 /proc/t_ray_scan(mob/viewer, flick_time = 8, distance = 3)
 	if(!ismob(viewer) || !viewer.client)

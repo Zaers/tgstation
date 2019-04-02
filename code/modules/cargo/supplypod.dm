@@ -63,7 +63,7 @@
 	cut_overlays()
 	if (style == STYLE_SEETHROUGH || style == STYLE_INVISIBLE) //If we're invisible, we dont bother adding any overlays
 		return
-	else 
+	else
 		if (opened)
 			add_overlay("[icon_state]_open")
 		else
@@ -150,9 +150,11 @@
 		addtimer(CALLBACK(src, .proc/open, src), openingDelay) //After the openingDelay passes, we use the open proc from this supplypod, while referencing this supplypod's contents
 
 /obj/structure/closet/supplypod/open(atom/movable/holder, var/broken = FALSE, var/forced = FALSE) //The holder var represents an atom whose contents we will be working with
+	if (!holder)
+		return
 	if (opened) //This is to ensure we don't open something that has already been opened
 		return
-	opened = TRUE 
+	opened = TRUE
 	var/turf/T = get_turf(holder) //Get the turf of whoever's contents we're talking about
 	var/mob/M
 	if (istype(holder, /mob)) //Allows mobs to assume the role of the holder, meaning we look at the mob's contents rather than the supplypod's contents. Typically by this point the supplypod's contents have already been moved over to the mob's contents
