@@ -17,6 +17,7 @@
 	poster_structure = new_poster_structure
 	if(!new_poster_structure && poster_type)
 		poster_structure = new poster_type(src)
+		poster_structure.icon = icon //makes it so you can have posters with other icons i.e. flags
 
 	// posters store what name and description they would like their
 	// rolled up form to take.
@@ -24,6 +25,7 @@
 		name = poster_structure.poster_item_name
 		desc = poster_structure.poster_item_desc
 		icon_state = poster_structure.poster_item_icon_state
+		icon = poster_structure.icon
 
 		name = "[name] - [poster_structure.original_name]"
 
@@ -51,6 +53,7 @@
 	icon = 'icons/obj/contraband.dmi'
 	anchored = TRUE
 	var/ruined = FALSE
+	var/prefix = "poster" //spaghetti to make some flag icons properly work
 	var/random_basetype
 	var/never_random = FALSE // used for the 'random' subclasses.
 
@@ -64,7 +67,7 @@
 		randomise(random_basetype)
 	if(!ruined)
 		original_name = name // can't use initial because of random posters
-		name = "poster - [name]"
+		name = "[prefix] - [name]"
 		desc = "A large piece of space-resistant printed paper. [desc]"
 
 /obj/structure/sign/poster/proc/randomise(base_type)
@@ -80,6 +83,8 @@
 	name = initial(selected.name)
 	desc = initial(selected.desc)
 	icon_state = initial(selected.icon_state)
+	icon = initial(selected.icon)
+	prefix = initial(selected.prefix)
 	poster_item_name = initial(selected.poster_item_name)
 	poster_item_desc = initial(selected.poster_item_desc)
 	poster_item_icon_state = initial(selected.poster_item_icon_state)
@@ -106,6 +111,9 @@
 	playsound(src.loc, 'sound/items/poster_ripped.ogg', 100, 1)
 
 	var/obj/structure/sign/poster/ripped/R = new(loc)
+	R.icon = icon
+	R.icon_state = "[prefix]_ripped"
+	R.name = "ripped [prefix]" //not really a prefix at all!
 	R.pixel_y = pixel_y
 	R.pixel_x = pixel_x
 	R.add_fingerprint(user)
@@ -146,7 +154,7 @@
 	var/obj/structure/sign/poster/D = P.poster_structure
 
 	var/temp_loc = get_turf(user)
-	flick("poster_being_set",D)
+	flick("[D.prefix]_being_set",D)
 	D.forceMove(src)
 	qdel(P)	//delete it now to cut down on sanity checks afterwards. Agouri's code supports rerolling it anyway
 	playsound(D.loc, 'sound/items/poster_being_created.ogg', 100, 1)
@@ -599,54 +607,61 @@
 	poster_item_desc = "An official Nanotrasen-sanctioned flag. It comes with state-of-the-art adhesive backing, for easy pinning to any vertical surface."
 	poster_item_icon_state = "folded_flag"
 	icon = 'icons/obj/patriotism.dmi'
+	prefix = "flag"
 
 /obj/structure/sign/poster/flag/random
-	name = "random official flag"
+	name = "random flag"
 	random_basetype = /obj/structure/sign/poster/flag
 	icon_state = "folded_flag"
 	never_random = TRUE
 
-/obj/structure/sign/poster/flag/usayy
+/obj/structure/sign/poster/flag/official/random
+	name = "random official flag"
+	random_basetype = /obj/structure/sign/poster/flag/official
+	icon_state = "folded_flag"
+	never_random = TRUE
+
+/obj/structure/sign/poster/flag/official/usayy
 	name = "Flag of The United States of America"
 	desc = "As you admire this beauty you swear you hear an aircraft approaching."
 	icon_state = "flag1_legit"
 
-/obj/structure/sign/poster/flag/canada
+/obj/structure/sign/poster/flag/official/canada
 	name = "Canadian Flag"
 	desc = "Smells of maple syrup"
 	icon_state = "flag2_legit"
 
-/obj/structure/sign/poster/flag/rusk
+/obj/structure/sign/poster/flag/official/rusk
 	name = "Flag of The Russian Federation"
 	desc = "Used to mark designated squatting only loiter zones."
 	icon_state = "flag3_legit"
 
-/obj/structure/sign/poster/flag/nippon
+/obj/structure/sign/poster/flag/official/nippon
 	name = "Japanese Flag"
 	desc = "Naruto headbands remain illegal to wear onboard nanotrasen facilities."
 	icon_state = "flag4_legit"
 
-/obj/structure/sign/poster/flag/swedeistan
+/obj/structure/sign/poster/flag/official/swedeistan
 	name = "Swedish Flag"
 	desc = "Smells of kebab and sulfur."
 	icon_state = "flag5_legit"
 
-/obj/structure/sign/poster/flag/britbong
+/obj/structure/sign/poster/flag/official/britbong
 	name = "Flag of the UK"
 	desc = "ARE YOU FROM BRITISH?"
 	icon_state = "flag6_legit"
 
-/obj/structure/sign/poster/flag/finland
+/obj/structure/sign/poster/flag/official/finland
 	name = "Flag of Finland"
 	desc = "Preserved after the second finno-korean hyperwar, has ':DDDDDDDDDD' embroided into it."
 	icon_state = "flag7_legit"
 
-/obj/structure/sign/poster/flag/baguette
+/obj/structure/sign/poster/flag/official/baguette
 	name = "French Flag"
 	desc = "Muuuuahaaaa the French."
 	icon_state = "flag8_legit"
 
-/obj/structure/sign/poster/flag/rico
+/obj/structure/sign/poster/flag/official/rico
 	name = "Puerto Rican Flag"
 	desc = "For the token shitskins aboard to feel good about."
 	icon_state = "flag9_legit"
@@ -692,19 +707,20 @@
 	desc = "Kangsong Daeguk!."
 	icon_state = "flag6"
 
+/obj/item/poster/flag
+	icon = 'icons/obj/patriotism.dmi'
+	icon_state = "folded_flag"
+
 
 //folded flags random for cargo and mapping
 /obj/item/poster/flag/flag_contraband_random
-	name = "random contraband poster"
+	name = "random contraband flag"
 	poster_type = /obj/structure/sign/poster/flag/contraband/random
-	icon_state = "folded_flag"
 
 //sanctioned flags
 /obj/item/poster/flag/flag_random
-	name = "random contraband poster"
-	poster_type = /obj/structure/sign/poster/flag/random
-	icon = 'icons/obj/patriotism.dmi'
-	icon_state = "folded_flag"
+	name = "random official flag"
+	poster_type = /obj/structure/sign/poster/flag/official/random
 
 
 #undef PLACE_SPEED
