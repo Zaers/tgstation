@@ -1833,7 +1833,7 @@
 "aJm" = (/obj/machinery/shieldgen,/turf/open/floor/plating,/area/engine/engineering)
 "aJn" = (/obj/structure/table,/obj/item/airlock_painter,/obj/effect/turf_decal/delivery,/turf/open/floor/plasteel,/area/engine/engineering)
 "aJo" = (/obj/machinery/atmospherics/pipe/simple/orange/visible{dir = 4},/turf/open/floor/plasteel,/area/engine/atmospherics_engine)
-"aJp" = (/obj/structure/table,/obj/effect/turf_decal/delivery,/obj/item/clothing/glasses/meson/engine,/obj/item/clothing/glasses/meson/engine,/obj/item/clothing/glasses/meson/engine,/obj/machinery/light{dir = 4},/obj/effect/turf_decal/stripes/line{dir = 4},/obj/item/pipe_dispenser,/obj/item/pipe_dispenser,/obj/item/pipe_dispenser,/turf/open/floor/plasteel,/area/engine/engineering)
+"aJp" = (/obj/structure/table,/obj/effect/turf_decal/delivery,/obj/item/clothing/glasses/meson/engine,/obj/item/clothing/glasses/meson/engine,/obj/item/clothing/glasses/meson/engine,/obj/machinery/light{dir = 4},/obj/effect/turf_decal/stripes/line{dir = 4},/obj/item/pipe_dispenser,/obj/item/pipe_dispenser,/obj/item/pipe_dispenser,/obj/item/paper/guides/jobs/engi/supermatter,/turf/open/floor/plasteel,/area/engine/engineering)
 "aJq" = (/obj/structure/reagent_dispensers/watertank,/turf/open/floor/plasteel,/area/engine/atmospherics_engine)
 "aJr" = (/obj/structure/reagent_dispensers/fueltank,/turf/open/floor/plasteel,/area/engine/atmospherics_engine)
 "aJs" = (/obj/machinery/door/airlock/maintenance{name = "Incinerator Access"; req_access_txt = "12"},/obj/structure/cable/yellow{icon_state = "1-2"},/obj/machinery/atmospherics/pipe/simple/orange/visible,/turf/open/floor/plating,/area/maintenance/starboard)
