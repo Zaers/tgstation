@@ -270,6 +270,19 @@
 				return
 	return
 
+
+/mob/living/silicon/robot/mommi/is_holding_tool_quality(quality)
+	var/obj/item/best_item
+	var/best_quality = INFINITY
+
+	if(tool_state)
+		if(tool_state.tool_behaviour == quality && tool_state.toolspeed < best_quality)
+			best_item = tool_state
+			best_quality = tool_state.toolspeed
+
+	return best_item
+
+
 //cycle_modules() - Cycles through the list of selected modules.
 /mob/living/silicon/robot/mommi/cycle_modules()
 	return
