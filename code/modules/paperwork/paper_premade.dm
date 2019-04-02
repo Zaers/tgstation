@@ -16,6 +16,58 @@
 	name = "paper- 'Greetings from Billy Bob'"
 	info = "<B>Hey fellow botanist!</B><BR>\n<BR>\nI didn't trust the station folk so I left<BR>\na couple of weeks ago. But here's some<BR>\ninstructions on how to operate things here.<BR>\nYou can grow plants and each iteration they become<BR>\nstronger, more potent and have better yield, if you<BR>\nknow which ones to pick. Use your botanist's analyzer<BR>\nfor that. You can turn harvested plants into seeds<BR>\nat the seed extractor, and replant them for better stuff!<BR>\nSometimes if the weed level gets high in the tray<BR>\nmutations into different mushroom or weed species have<BR>\nbeen witnessed. On the rare occasion even weeds mutate!<BR>\n<BR>\nEither way, have fun!<BR>\n<BR>\nBest regards,<BR>\nBilly Bob Johnson.<BR>\n<BR>\nPS.<BR>\nHere's a few tips:<BR>\nIn nettles, potency = damage<BR>\nIn amanitas, potency = deadliness + side effect<BR>\nIn Liberty caps, potency = drug power + effect<BR>\nIn chilies, potency = heat<BR>\n<B>Nutrients keep mushrooms alive!</B><BR>\n<B>Water keeps weeds such as nettles alive!</B><BR>\n<B>All other plants need both.</B>"
 
+/obj/item/paper/guides/jobs/engi/supermatter
+	name = "paper- 'Basic Supermatter Setup'"
+	info = {"<B>Gases and their effects on the supermatter crystal:</B>
+	<br>
+	* Nitrogen: Lowers heat penalty, lowers power generation.
+	<br>
+	* Nitrous Oxide: Raises heat damage resistance.
+	<br>
+	* Plasma: Greatly raises heat penalty, raises power generation, greatly raises power transmission.
+	<br>
+	* Oxygen: Raises heat penalty, raises power generation, raises power transmission.
+	<br>
+	* Carbon Dioxide: Slightly raises heat penalty, raises power generation, inhibits power loss.
+	<br>
+	<b> WARNING: </b>Having too many moles of gas around the crystal will increase the effect of heat on its integrity!
+	<br>
+	<b> WARNING: </b>Producing too much power will damage the crystal!
+	<br>
+	<b> WARNING: </b>Anomalies can be generated if the power is too high or the crystal is heavily damaged!
+	<br>
+	Caution: The crystal will produce oxygen and plasma when active, which may ignite.
+	<br>
+	Caution: The radiation of the crystal will turn CO2 and O2 into pluoxium.
+	<br>
+	<hr>
+	<br>
+	<B>A basic and safe setup for the supermatter crystal:</B><br>
+	1: Wear meson goggles, a radiation protective suit and load the collector with filled plasma tanks.
+	<br>
+	2: Set up the vents in the chamber to Internal Pressure 0 and the scrubbers to Siphon with Extended Range.
+	<br>
+	3: Maximize pumps as to make the gas flow through the chamber and then to the cooling loop (turn Gas To Filter pump off).
+	<br>
+	4: Wrench in the nitrogen canisters and turn their input pumps to max.
+	<br>
+	5: Verify the gases are correctly looping through the chamber and the waste gas is venting into space.
+	<br>
+	6: Energize emitters to power on the crystal and keep it powered.
+	<br>
+	7: Set up the SMES units to charge with the power generated from the crystal.
+	<br>
+	8: Periodically refill the collector plasma tanks to ensure power generation is kept up.
+	<br>
+	Note: Advanced users may experiment with other gas mixes and piping changes.
+	<br>
+	Note: You may vary the number of emitters active to limit the power of the crystal.
+	<br>
+	Note: Freezers may be used to rapidly chill gas if the cooling loop is overheated.
+	<br>
+	"}
+
+
 /obj/item/paper/fluff/jobs/security/beepsky_mom
 	name = "Note from Beepsky's Mom"
 	info = "01001001 00100000 01101000 01101111 01110000 01100101 00100000 01111001 01101111 01110101 00100000 01110011 01110100 01100001 01111001 00100000 01110011 01100001 01100110 01100101 00101110 00100000 01001100 01101111 01110110 01100101 00101100 00100000 01101101 01101111 01101101 00101110"
