@@ -4,9 +4,7 @@
 	if(keeper) //keeper hacks to make it automatically talk in mommitalk
 		if(check_emote(message))
 			return
-		if(sanitize)
-			message = trim(copytext(sanitize(message), 1, MAX_MESSAGE_LEN))
-		if(!message || message == "")
+		if(!message || message == "") //Do not sanitize here to avoid double encoding
 			return
 		message = ":d [message]" //this really cucks them out of posting in binary chat as keepers, but that
 	. = ..()
@@ -21,4 +19,4 @@
 		if(isobserver(M))
 			var/following = src
 			var/link = FOLLOW_LINK(M, following)
-			to_chat(M, "[link] [rendered]")
+			to_chat(M, "<span class='linkify'>[link] [rendered]</span>")
