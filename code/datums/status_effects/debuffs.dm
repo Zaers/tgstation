@@ -24,17 +24,21 @@
 //STUN
 /datum/status_effect/incapacitating/stun
 	id = "stun"
+	signal = COMSIG_LIVING_STATUS_STUN
 
 //KNOCKDOWN
 /datum/status_effect/incapacitating/knockdown
 	id = "knockdown"
+	signal = COMSIG_LIVING_STATUS_KNOCKDOWN
 
 //IMMOBILIZED
 /datum/status_effect/incapacitating/immobilized
 	id = "immobilized"
+	signal = COMSIG_LIVING_STATUS_IMMOBILIZE
 
 /datum/status_effect/incapacitating/paralyzed
 	id = "paralyzed"
+	signal = COMSIG_LIVING_STATUS_UNCONSCIOUS
 
 //UNCONSCIOUS
 /datum/status_effect/incapacitating/unconscious
