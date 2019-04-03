@@ -17,7 +17,7 @@
 	var/off_icon					// Icon state used when not cooking.
 	var/cooking						// Whether or not the machine is currently operating.
 	var/cook_type					// A string value used to track what kind of food this machine makes.
-	var/cook_time = 200				// How many ticks the cooking will take.
+	var/cook_time = 50				// How many ticks the cooking will take.
 	var/can_cook_mobs				// Whether or not this machine accepts grabbed mobs.
 	var/food_color					// Colour of resulting food item.
 	var/cooked_sound				// Sound played when cooking completes.
@@ -54,11 +54,11 @@
 	if(default_unfasten_wrench(user, I, 20))
 		return
 	// We're trying to cook something else. Check if it's valid.
-	var/obj/item/reagent_containers/food/snacks/check = I
-	if(istype(check) && islist(check.cooked) && (cook_type in check.cooked))
-		to_chat(user, "<span class='warning'>\The [check] has already been [cook_type].</span>")
-		return 0
-	else if(istype(check, /obj/item/reagent_containers/glass))
+	var/obj/item/check = I
+//	if(istype(check) && islist(check.cooked) && (cook_type in check.cooked))
+//		to_chat(user, "<span class='warning'>\The [check] has already been [cook_type].</span>")
+//		return 0
+	if(istype(check, /obj/item/reagent_containers/glass))
 		to_chat(user, "<span class='warning'>That would probably break [src].</span>")
 		return 0
 	else if(istype(check, /obj/item/disk/nuclear))
@@ -119,8 +119,7 @@
 	// Reset relevant variables.
 	qdel(cooking_obj)
 	src.visible_message("<span class='notice'>\The [src] pings!</span>")
-	if(cooked_sound)
-		playsound(get_turf(src), cooked_sound, 50, 1)
+	playsound(src.loc, 'sound/machines/ding.ogg', 50, 1)
 
 	if(!can_burn_food)
 		icon_state = off_icon
