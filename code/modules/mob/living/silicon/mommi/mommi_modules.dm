@@ -21,10 +21,9 @@
 		/obj/item/stack/sheet/metal/cyborg,
 		/obj/item/stack/sheet/glass/cyborg,
 		/obj/item/stack/sheet/rglass/cyborg,
-		/obj/item/stack/rods/cyborg,
-		/obj/item/stack/tile/plasteel/cyborg,
 		/obj/item/storage/bag/ore/cyborg,
 		/obj/item/pickaxe/drill/cyborg,
+		/obj/item/t_scanner/adv_mining_scanner,
 		/obj/item/stack/cable_coil/cyborg)
 	emag_modules = list(/obj/item/borg/stun)
 	magpulsing = TRUE
