@@ -8,6 +8,7 @@
 	var/obj/machinery/atmospherics/components/binary/circulator/cold_circ
 	var/obj/machinery/atmospherics/components/binary/circulator/hot_circ
 
+	var/powergen_divider = 1 //Use this var to quickly lower the power outputted
 	var/lastgen = 0
 	var/lastgenlev = -1
 	var/lastcirc = "00"
@@ -37,7 +38,7 @@
 	else
 		cut_overlays()
 
-		var/L = min(round(lastgenlev/100000),11)
+		var/L = max(0, min( round(11*lastgenlev / 100000), 11))
 		if(L != 0)
 			add_overlay(image('icons/obj/power.dmi', "teg-op[L]"))
 
@@ -70,7 +71,7 @@
 				var/energy_transfer = delta_temperature*hot_air_heat_capacity*cold_air_heat_capacity/(hot_air_heat_capacity+cold_air_heat_capacity)
 
 				var/heat = energy_transfer*(1-efficiency)
-				lastgen += energy_transfer*efficiency
+				lastgen = energy_transfer*efficiency
 
 				hot_air.temperature = hot_air.temperature - energy_transfer/hot_air_heat_capacity
 				cold_air.temperature = cold_air.temperature + heat/cold_air_heat_capacity
@@ -96,11 +97,9 @@
 	src.updateDialog()
 
 /obj/machinery/power/generator/process()
-	//Setting this number higher just makes the change in power output slower, it doesnt actualy reduce power output cause **math**
-	var/power_output = round(lastgen / 10)
+	var/power_output = round(lastgen / powergen_divider) //allows badmins to totally cuck the power output
 	add_avail(power_output)
-	lastgenlev = power_output
-	lastgen -= power_output
+	lastgenlev = power_output //In theory not removing it from lastgen shouldn't cause unlimited power if process and process_atmos tick at a 1:1 rate, but I'll keep it in for safety
 	..()
 
 /obj/machinery/power/generator/proc/get_menu(include_link = TRUE)
