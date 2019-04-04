@@ -1,0 +1,8 @@
+{
+    "map_name": "Junkstation",
+    "map_path": "map_files/Junkstation",
+    "map_file": "Junkstation.dmm",
+	"shuttles": {
+	    "cargo": "cargo_delta"
+    }
+}
