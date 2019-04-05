@@ -13,8 +13,8 @@ Format:
 endmap
 
 map metastation
-	default
 	#voteweight 1.5
+	default
 endmap
 
 map boxstation
@@ -33,4 +33,10 @@ map runtimestation
 endmap
 
 map multiz_debug
+	disabled
+endmap
+
+map Junkstation
+	#default
+	#Metastation should be the default when making a pull request.
 endmap
