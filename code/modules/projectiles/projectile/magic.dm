@@ -66,6 +66,8 @@
 	if(!isturf(target))
 		teleloc = target.loc
 	for(var/atom/movable/stuff in teleloc)
+		if(ismob(stuff) && !isliving(stuff))
+			continue
 		if(!stuff.anchored && stuff.loc)
 			if(do_teleport(stuff, stuff, 10, channel = TELEPORT_CHANNEL_MAGIC))
 				teleammount++
