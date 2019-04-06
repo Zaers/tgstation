@@ -169,6 +169,9 @@ GLOBAL_VAR(posibrain_notify_cooldown)
 		ping_ghosts("created", TRUE)
 
 /obj/item/mmi/posibrain/attackby(obj/item/O, mob/user)
+	user.changeNext_move(CLICK_CD_MELEE)
+	if(try_handling_mommi_construction(O, user)) //allow mommi building but not the rest of the interactions
+		return
 	return
 
 

@@ -98,7 +98,7 @@
 		Mo.invisibility = 0
 		//M.custom_name = created_name
 		Mo.choose_icon()
-		brainmob.mind.transfer_to(M)
+		brainmob.mind.transfer_to(Mo)
 
 		if(Mo.mind && Mo.mind.special_role)
 			Mo.mind.store_memory("In case you look at this after being borged, the objectives are only here until I find a way to make them not show up for you, as I can't simply delete them without screwing up round-end reporting. --NeoFite")
