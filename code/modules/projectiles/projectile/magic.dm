@@ -382,6 +382,10 @@
 	var/locker_suck = TRUE
 	var/obj/structure/closet/locker_temp_instance = /obj/structure/closet/decay
 
+/obj/item/projectile/magic/locker/Initialize()
+	. = ..()
+	locker_temp_instance = new(src)
+
 /obj/item/projectile/magic/locker/prehit(atom/A)
 	if(isliving(A) && locker_suck)
 		var/mob/living/M = A
