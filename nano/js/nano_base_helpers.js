@@ -57,6 +57,9 @@ NanoBaseHelpers = function ()
 			ceil: function(number) {								
 				return Math.ceil(number);
 			},
+			fixed: function(number, n) {								
+				return number.toFixed(n);
+			},
 			// Format a string (~string("Hello {0}, how are {1}?", 'Martin', 'you') becomes "Hello Martin, how are you?")
 			string: function() {		
 				if (arguments.length == 0)
