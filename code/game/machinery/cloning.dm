@@ -193,6 +193,7 @@
 	if(!clonename)	//to prevent null names
 		clonename = "clone ([rand(1,999)])"
 	H.real_name = clonename
+	H.dna.generate_unique_enzymes() //Should always have DNA at this point!
 
 	icon_state = "pod_1"
 	//Get the clone body ready
