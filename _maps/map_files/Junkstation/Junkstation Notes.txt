@@ -18,6 +18,9 @@
 		-This is good, since anons seem to hate playing security.
 -Prison has to be micromanaged by warden.
 -Execution disposal should be (one of) the only deep-space facing disposals.
+-Security needs a permabrig with activities
+-Security should be armed with lethal weapons instead of tasers.
+	-Get zaers to port the hold-up mechanics.
 
 
 =======Medical=======
@@ -98,6 +101,7 @@
 		>dismantle station
 -Science has supermatter shard and associated chamber to power itself
 	-3 rad collectors, beg engineering for more you pleb.
+-Consider including a holo-projector for the toxins bomb-test site. Experiment with cameras.
 
 
 
