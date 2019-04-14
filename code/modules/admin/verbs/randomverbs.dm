@@ -799,8 +799,10 @@ Traitors and the like can also be revived with the previous role mostly intact.
 		return
 
 	var/frn = CONFIG_GET(flag/force_random_names)
-	if(frn)
+	var/fra = CONFIG_GET(flag/force_random_appearances)
+	if(frn || fra)
 		CONFIG_SET(flag/force_random_names, FALSE)
+		CONFIG_SET(flag/force_random_appearances, FALSE)
 		message_admins("Admin [key_name_admin(usr)] has disabled \"Everyone is Special\" mode.")
 		to_chat(usr, "Disabled.")
 		return
@@ -819,6 +821,7 @@ Traitors and the like can also be revived with the previous role mostly intact.
 	to_chat(usr, "<i>Remember: you can always disable the randomness by using the verb again, assuming the round hasn't started yet</i>.")
 
 	CONFIG_SET(flag/force_random_names, TRUE)
+	CONFIG_SET(flag/force_random_appearances, TRUE)
 	SSblackbox.record_feedback("tally", "admin_verb", 1, "Make Everyone Random") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 
 
