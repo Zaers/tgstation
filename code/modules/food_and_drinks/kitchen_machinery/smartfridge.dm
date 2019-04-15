@@ -281,7 +281,7 @@
 	..()
 	if(drying)
 		if(rack_dry())//no need to update unless something got dried
-			SStgui.update_uis(src)
+			SSnanoui.update_uis(src)
 			update_icon()
 
 /obj/machinery/smartfridge/drying_rack/accept_check(obj/item/O)
