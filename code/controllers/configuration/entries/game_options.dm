@@ -58,6 +58,8 @@
 
 /datum/config_entry/flag/force_random_names
 
+/datum/config_entry/flag/force_random_appearances
+
 /datum/config_entry/flag/humans_need_surnames
 
 /datum/config_entry/flag/allow_ai	// allow ai job
