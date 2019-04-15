@@ -1,3 +1,12 @@
+<script id="scrubbing_types" type="text/x-jsrender">
+{{include ~idtag=data.id_tag}}
+
+{{for data.filter_types}}
+	{{:~link(gas_name, enabled ? 'circlesmall-close' : 'circlesmall-empty' , {'action' : 'toggle_filter', 'val' : gas_id, 'id_tag': ~idtag}, null, enabled ? 'selected' : null)}}
+{{/for}}
+{{/include}}
+</script>
+
 <h3>Scrubber Status</h3>
 <div class="item">
 	<div class="itemLabel">
@@ -54,9 +63,4 @@
 </div>
 
 
-{{include ~idtag=data.id_tag}}
-
-{{for data.filter_types}}
-	{{:~link(gas_name, enabled ? 'circlesmall-close' : 'circlesmall-empty' , {'action' : 'toggle_filter', 'val' : gas_id, 'id_tag': ~idtag}, null, enabled ? 'selected' : null)}}
-{{/for}}
-{{/include}}
+{{include tmpl="#scrubbing_types"/}}

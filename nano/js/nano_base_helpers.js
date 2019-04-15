@@ -69,14 +69,14 @@ NanoBaseHelpers = function ()
 			htmldecode: function(str) {
 				return unescape(str);
 			},
-			quickdecode : function(str){
-				return $.views.converters.unencode(str);
-			},
 			urlencode: function(str) {
 				return $.views.converters.url(str);
 			},
 			urldecode: function(str) {
 				return decodeURI(str);
+			},
+			mergejson: function(json1, json2) {
+				return $.extend( json1, json2);
 			},
 			// Format a string (~string("Hello {0}, how are {1}?", 'Martin', 'you') becomes "Hello Martin, how are you?")
 			string: function() {		

@@ -244,15 +244,16 @@
  /**
   * Add default data to the data being sent to the ui.
   *
-  * @param data /list The list of data to be modified
+  * @param
   *
-  * @return /list modified data
+  * @return /list data to add
   */
 /datum/nanoui/proc/get_default_data()
 	. = list(
 			"status" = status,
-			"user" = list("name" = user.name)
-		)
+			"user" = list("name" = user.name),
+			"screen" = 	ui_screen,
+			)
 	return
 
 
@@ -422,9 +423,15 @@
 	if(user?.client?.nanodebug)
 		to_chat(user, "SENT: [href]")
 
-	update_status(push = 0) // Update the window state.
-	if(src_object.ui_act(action, params, src, state)) // Call ui_act() on the src_object.
-		SSnanoui.update_uis(src_object) // Update if the object requested it.
+	switch(action)
+		if("nano:view")
+			if(params["screen"])
+				ui_screen = params["screen"]
+			SSnanoui.update_uis(src_object)
+		else
+			update_status(push = 0) // Update the window state.
+			if(src_object.ui_act(action, params, src, state)) // Call ui_act() on the src_object.
+				SSnanoui.update_uis(src_object) // Update if the object requested it.
 
  /**
   * private
