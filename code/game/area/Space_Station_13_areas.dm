@@ -862,6 +862,14 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 	name = "Science Division"
 	icon_state = "toxlab"
 
+/area/science/supermatter_storage
+	name = "Science Supermatter Storage"
+	icon_state = "toxlab"
+
+/area/science/supermatter_reactor
+	name = "Science Supermatter Generator"
+	icon_state = "toxlab"
+
 /area/science/lab
 	name = "Research and Development"
 	icon_state = "toxlab"
