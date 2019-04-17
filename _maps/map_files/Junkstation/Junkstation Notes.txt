@@ -87,13 +87,15 @@
 -Robotics only has ghetto surgery tools
 -Xenobiology has fewer slime cages (3-4)
 -Xenobiology has AYY LMAO dissection room
-	-Complete with NO2 gas canister for safe handling experience
+	-Complete with some neurotoxin supply for safe handling.
+		-Includes smoke dispenser so you can neuro-smoke them.
 	-Possibly starts with 1-2 eggs
 		-Feasible since lavaland usually seems to have a nest.
 		-Admins can bully people who abuse eggs.
 		-Only RD can open the shutters anyway.
 	-Deads will come back just to get gassed and surgerized
 		>the first transexual ayy
+		-Also there's just a chance in general that they'll escape.
 -Xenobiology also has only ghetto surgery tools.
 -Science has everything made out of wood.
 	-If there is no mining:
@@ -102,6 +104,12 @@
 -Science has supermatter shard and associated chamber to power itself
 	-3 rad collectors, beg engineering for more you pleb.
 -Consider including a holo-projector for the toxins bomb-test site. Experiment with cameras.
+-Telescience should exist
+	-Contains the teleporter normally in command
+	-Contains some quantum pads
+	-Contains bluespace launch pad
+-Remember to add nanites room
+-TOXINS WILL BE ROBUST
 
 
 
