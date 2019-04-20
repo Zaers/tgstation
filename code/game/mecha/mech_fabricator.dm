@@ -387,7 +387,7 @@
 		if (materials.on_hold())
 			say("Mineral access is on hold, please contact the quartermaster.")
 			return 0
-		materials.mat_container.retrieve_sheets(text2num(href_list["remove_mat"]), href_list["material"])
+		materials.mat_container.retrieve_sheets(text2num(href_list["remove_mat"]), href_list["material"], drop_location())
 
 	updateUsrDialog()
 	return

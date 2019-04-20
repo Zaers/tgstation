@@ -453,7 +453,7 @@
 "aiK" = (/obj/structure/window/reinforced,/obj/effect/turf_decal/stripes/line{dir = 10},/turf/open/floor/plasteel,/area/security/range)
 "aiL" = (/obj/machinery/door/window/westleft{base_state = "right"; dir = 2; icon_state = "right"; name = "Shooting Range"},/obj/effect/turf_decal/stripes/line,/turf/open/floor/plasteel,/area/security/range)
 "aiM" = (/obj/structure/window/reinforced,/obj/effect/turf_decal/stripes/line{dir = 6},/turf/open/floor/plasteel,/area/security/range)
-"aiN" = (/obj/structure/cable/yellow{icon_state = "0-2"},/obj/machinery/atmospherics/components/unary/portables_connector/visible,/obj/machinery/power/apc/highcap/five_k{areastring = "/area/crew_quarters/bar"; dir = 1; name = "Thermal Engine APC"; pixel_y = 25},/turf/open/floor/plasteel,/area/engine/atmospherics_engine)
+"aiN" = (/obj/structure/cable/yellow{icon_state = "0-2"},/obj/machinery/atmospherics/components/unary/portables_connector/visible,/obj/machinery/power/apc/highcap/five_k{areastring = "/area/engine/atmospherics_engine"; dir = 1; name = "Thermal Engine APC"; pixel_y = 25},/turf/open/floor/plasteel,/area/engine/atmospherics_engine)
 "aiO" = (/obj/structure/chair/stool{pixel_y = 8},/turf/open/floor/plating,/area/maintenance/fore)
 "aiP" = (/obj/structure/table,/obj/item/folder,/turf/open/floor/plating,/area/maintenance/fore)
 "aiQ" = (/obj/structure/cable/yellow{icon_state = "1-2"},/obj/structure/extinguisher_cabinet{pixel_x = -27},/obj/effect/turf_decal/tile/neutral{dir = 1},/turf/open/floor/plasteel,/area/crew_quarters/fitness/recreation)
