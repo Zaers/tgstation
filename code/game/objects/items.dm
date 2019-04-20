@@ -127,9 +127,9 @@ GLOBAL_VAR_INIT(rpg_loot_items, FALSE)
 		item_flags |= FORCE_STRING_OVERRIDE
 
 	if(!hitsound)
-		if(damtype == "fire")
+		if(damtype == BURN)
 			hitsound = 'sound/items/welder.ogg'
-		if(damtype == "brute")
+		if(damtype == BRUTE)
 			hitsound = "swing_hit"
 
 	if (!embedding)
