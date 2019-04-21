@@ -240,6 +240,7 @@ SUBSYSTEM_DEF(ticker)
 			if(!can_continue)
 				log_game("[mode.name] failed pre_setup, cause: [mode.setup_error]")
 				adjusted_runnable_modes.Remove(mode)
+				mode.clean_up_special_roles()
 				QDEL_NULL(mode)
 				continue
 		else
