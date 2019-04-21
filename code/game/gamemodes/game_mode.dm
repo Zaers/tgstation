@@ -73,7 +73,6 @@
 		message_admins("<span class='notice'>DEBUG: GAME STARTING WITHOUT PLAYER NUMBER CHECKS, THIS WILL PROBABLY BREAK SHIT.</span>")
 		return 1
 
-
 ///Attempts to select players for special roles the mode might have.
 /datum/game_mode/proc/pre_setup()
 	return 1
@@ -109,6 +108,16 @@
 	generate_station_goals()
 	gamemode_ready = TRUE
 	return 1
+
+
+/datum/game_mode/proc/clean_up_special_roles()
+	var/list/datum/mind/player_minds = list()
+	for(var/mob/player in GLOB.player_list)
+		if(player.mind)
+			player_minds += player.mind
+
+	for(var/datum/mind/player in player_minds)
+		player.special_role = null
 
 
 ///Handles late-join antag assignments
