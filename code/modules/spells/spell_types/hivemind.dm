@@ -816,7 +816,7 @@
 		to_chat(user, "<span class='notice'>This is a bug. Error:HIVE5</span>")
 		return
 	the_spell.ignore_mindshield = !active
-	to_chat(user, "<span class='notice'>We [active?"let our minds rest and cancel our crushing power.":"prepare to crush mindshielding technology!"]</span>")
+	to_chat(user, "<span class='notice'>We [active?"let our minds rest and cancel our crushing power.":"prepare to crush loyalty technology!"]</span>")
 	active = !active
 	if(active)
 		revert_cast()
