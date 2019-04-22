@@ -55,7 +55,7 @@
 	whispered = TRUE
 	object_path = /obj/effect/clockwork/sigil/submission
 	creator_message = "<span class='brass'>A luminous sigil appears below you. Any non-Servants to cross it will be converted after 8 seconds if they do not move.</span>"
-	usage_tip = "This is the primary conversion method, though it will not penetrate mindshield implants."
+	usage_tip = "This is the primary conversion method, though it will not penetrate loyalty implants."
 	tier = SCRIPTURE_DRIVER
 	one_per_tile = TRUE
 	primary_component = HIEROPHANT_ANSIBLE
