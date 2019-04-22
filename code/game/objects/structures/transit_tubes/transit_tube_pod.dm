@@ -68,13 +68,12 @@
 
 /obj/structure/transit_tube_pod/container_resist(mob/living/user)
 	if(!user.incapacitated())
-		empty_pod()
-		return
-	if(!moving)
 		user.changeNext_move(CLICK_CD_BREAKOUT)
 		user.last_special = world.time + CLICK_CD_BREAKOUT
 		to_chat(user, "<span class='notice'>You start trying to escape from the pod...</span>")
-		if(do_after(user, 600, target = src))
+		if(do_after(user, 100, target = src, needloc = FALSE))
+			if(user.loc != src) //sanity due to needloc = FALSE
+				return
 			to_chat(user, "<span class='notice'>You manage to open the pod.</span>")
 			empty_pod()
 
