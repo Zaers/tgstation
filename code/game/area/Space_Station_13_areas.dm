@@ -810,6 +810,10 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 	name = "Quartermasters"
 	icon_state = "quart"
 
+/area/quartermaster/cargopower
+	name = "Pacmann Array"
+	icon_state = "cargo_bay"
+
 /area/quartermaster/sorting
 	name = "Delivery Office"
 	icon_state = "cargo_delivery"
