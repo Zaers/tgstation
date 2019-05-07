@@ -1,7 +1,7 @@
 /obj/item/projectile/ion
 	name = "ion bolt"
 	icon_state = "ion"
-	damage = 0
+	damage = 35
 	damage_type = BURN
 	nodamage = TRUE
 	flag = "energy"
