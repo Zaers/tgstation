@@ -47,6 +47,7 @@
 
 /obj/machinery/power/emitter/anchored
 	anchored = TRUE
+	state = EMITTER_WELDED
 
 /obj/machinery/power/emitter/ctf
 	name = "Energy Cannon"

@@ -256,7 +256,7 @@
 /turf/open/floor/fake_sepia
 	icon_state = "sepia"
 	desc = "A grungy old tile."
-	floor_tile = /obj/item/stack/tile/sepia
+	floor_tile = /obj/item/stack/tile/fake_sepia
 //Need a whole new tileset that included faded department colours.
 
 /turf/open/floor/bronze
