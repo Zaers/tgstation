@@ -197,6 +197,14 @@
 	icon_state = "tile_poddark"
 	turf_type = /turf/open/floor/pod/dark
 
+//Fake Sepia
+/obj/item/stack/tile/fake_sepia
+	name = "Old Tile"
+	singular_name = "Old floor tile"
+	desc = "A grungy old floor tile."
+	icon_state = "tile-sepia"
+	turf_type = /turf/open/floor/fake_sepia
+
 //Plasteel (normal)
 /obj/item/stack/tile/plasteel
 	name = "floor tile"
