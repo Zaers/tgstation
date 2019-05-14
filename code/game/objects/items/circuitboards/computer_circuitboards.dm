@@ -5,6 +5,10 @@
 /obj/item/circuitboard/computer/launchpad_console
 	name = "Launchpad Control Console (Computer Board)"
 	build_path = /obj/machinery/computer/launchpad
+	
+/obj/item/circuitboard/computer/telesci_console
+	name = "Telescience Control Console (Computer Board)"
+	build_path = /obj/machinery/computer/telescience 
 
 /obj/item/circuitboard/computer/message_monitor
 	name = "Message Monitor (Computer Board)"
