@@ -181,6 +181,22 @@
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/engine
 	resistance_flags = FIRE_PROOF
 
+/obj/item/clothing/head/helmet/space/hardsuit/engine/cryo
+	name = "engineering cryo-hardsuit helmet"
+	desc = "A special lightweight helmet designed for work in a hazardous,cold and low-pressure environment. Has radiation shielding."
+	icon_state = "hardsuit0-engicold"
+	item_state = "hardsuit0-engicold"
+	item_color = "engicold"
+
+/obj/item/clothing/suit/space/hardsuit/engine/cryo
+	name = "engineering cryo-hardsuit"
+	desc = "A special lightweight suit that protects against hazardous, cold and low pressure environments. Has radiation shielding."
+	icon_state = "cryo-engineering"
+	item_state = "cryo-engineering"
+	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/engine/cryo
+	slowdown = 0
+	allowed = list(/obj/item/flashlight, /obj/item/tank/internals/emergency_oxygen, /obj/item/tank/internals/plasma, /obj/item/tank/internals/plasmaman)
+
 	//Atmospherics
 /obj/item/clothing/head/helmet/space/hardsuit/engine/atmos
 	name = "atmospherics hardsuit helmet"
@@ -202,6 +218,21 @@
 	max_heat_protection_temperature = FIRE_IMMUNITY_MAX_TEMP_PROTECT
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/engine/atmos
 
+/obj/item/clothing/head/helmet/space/hardsuit/engine/atmos/cryo
+	name = "atmospherics cryo-hardsuit helmet"
+	desc = "A special lightweight helmet designed for work in a hazardous, cold and low-pressure environment. Has thermal shielding."
+	icon_state = "hardsuit0-atmocold"
+	item_state = "hardsuit0-atmocold"
+	item_color = "atmocold"
+
+/obj/item/clothing/suit/space/hardsuit/engine/atmos/cryo
+	name = "atmospherics cryo-hardsuit"
+	desc = "A special lightweight suit that protects against hazardous, cold and low pressure environments. Has thermal shielding."
+	icon_state = "cryo-atmos"
+	item_state = "cryo-atmos"
+	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/engine/atmos/cryo
+	slowdown = 0
+	allowed = list(/obj/item/flashlight, /obj/item/tank/internals/emergency_oxygen, /obj/item/tank/internals/plasma, /obj/item/tank/internals/plasmaman)
 
 	//Chief Engineer's hardsuit
 /obj/item/clothing/head/helmet/space/hardsuit/engine/elite
@@ -258,6 +289,22 @@
 /obj/item/clothing/suit/space/hardsuit/mining/Initialize()
 	. = ..()
 	AddComponent(/datum/component/armor_plate)
+
+/obj/item/clothing/head/helmet/space/hardsuit/mining/cryo
+	name = "mining cryo-hardsuit helmet"
+	desc = "A special lightweight helmet designed for work in a hazardous, cold and low pressure environment. Has reinforced plating for wildlife encounters and dual floodlights."
+	icon_state = "hardsuit0-minecold"
+	item_state = "hardsuit0-minecold"
+	item_color = "minecold"
+	allowed = list(/obj/item/flashlight, /obj/item/tank/internals/emergency_oxygen, /obj/item/tank/internals/plasma, /obj/item/tank/internals/plasmaman, /obj/item/resonator, /obj/item/mining_scanner, /obj/item/t_scanner/adv_mining_scanner, /obj/item/gun/energy/kinetic_accelerator)
+
+/obj/item/clothing/suit/space/hardsuit/mining/cryo
+	name = "mining cryo-hardsuit"
+	desc = "A special lightweight suit that protects against hazardous, cold and low pressure environments. Has reinforced plating for wildlife encounters."
+	icon_state = "cryo-mining"
+	item_state = "cryo-mining"
+	allowed = list(/obj/item/flashlight, /obj/item/tank/internals/emergency_oxygen, /obj/item/tank/internals/plasma, /obj/item/tank/internals/plasmaman, /obj/item/storage/bag/ore, /obj/item/pickaxe)
+	slowdown = 0
 
 	//Syndicate hardsuit
 /obj/item/clothing/head/helmet/space/hardsuit/syndi
@@ -499,7 +546,6 @@
 	item_color = "sec"
 	armor = list("melee" = 35, "bullet" = 15, "laser" = 30,"energy" = 10, "bomb" = 10, "bio" = 100, "rad" = 50, "fire" = 75, "acid" = 75)
 
-
 /obj/item/clothing/suit/space/hardsuit/security
 	icon_state = "hardsuit-sec"
 	name = "security hardsuit"
@@ -511,6 +557,22 @@
 /obj/item/clothing/suit/space/hardsuit/security/Initialize()
 	. = ..()
 	allowed = GLOB.security_hardsuit_allowed
+
+/obj/item/clothing/head/helmet/space/hardsuit/security/cryo
+	name = "security cryo-hardsuit helmet"
+	desc = "A special lightweight helmet that protects against hazardous, cold and low pressure environments. Has an additional layer of armor"
+	icon_state = "hardsuit0-seccold"
+	item_state = "hardsuit0-seccold"
+	item_color = "seccold"
+
+/obj/item/clothing/suit/space/hardsuit/security/cryo
+	name = "security cryo-hardsuit"
+	desc = "A special lightweight suit that protects against hazardous, cold and low pressure environments. Has an additional layer of armor"
+	icon_state = "cryo-security"
+	item_state = "cryo-security"
+	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/security/cryo
+	slowdown = 0
+	allowed = list(/obj/item/flashlight, /obj/item/tank/internals/emergency_oxygen, /obj/item/tank/internals/plasma, /obj/item/tank/internals/plasmaman)
 
 	//Head of Security hardsuit
 /obj/item/clothing/head/helmet/space/hardsuit/security/hos
