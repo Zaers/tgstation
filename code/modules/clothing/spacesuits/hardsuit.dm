@@ -303,6 +303,7 @@
 	desc = "A special lightweight suit that protects against hazardous, cold and low pressure environments. Has reinforced plating for wildlife encounters."
 	icon_state = "cryo-mining"
 	item_state = "cryo-mining"
+	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/mining/cryo
 	allowed = list(/obj/item/flashlight, /obj/item/tank/internals/emergency_oxygen, /obj/item/tank/internals/plasma, /obj/item/tank/internals/plasmaman, /obj/item/storage/bag/ore, /obj/item/pickaxe)
 	slowdown = 0
 
