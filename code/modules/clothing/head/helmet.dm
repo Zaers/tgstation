@@ -98,7 +98,7 @@
 	custom_premium_price = 450
 
 /obj/item/clothing/head/helmet/blueshirt/imperial
-	name = "blue helmet"
+	name = "imperial helmet"
 	desc = "Standard issue security helmet. For Nanotrasen!"
 	icon_state = "imperialhelmet"
 	item_state = "imperialhelmet"
