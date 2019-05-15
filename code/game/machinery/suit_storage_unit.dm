@@ -43,8 +43,8 @@
 	suit_type = /obj/item/clothing/suit/space/hardsuit/engine
 	mask_type = /obj/item/clothing/mask/breath
 
-/obj/machinery/suit_storage_unit/engine/cryo
-	suit_type = /obj/item/clothing/suit/space/hardsuit/engine/cryo
+/obj/machinery/suit_storage_unit/engine/lightweight
+	suit_type = /obj/item/clothing/suit/space/hardsuit/engine/lightweight
 	mask_type = /obj/item/clothing/mask/breath
 
 /obj/machinery/suit_storage_unit/ce
@@ -56,8 +56,8 @@
 	suit_type = /obj/item/clothing/suit/space/hardsuit/security
 	mask_type = /obj/item/clothing/mask/gas/sechailer
 
-/obj/machinery/suit_storage_unit/security/cryo
-	suit_type = /obj/item/clothing/suit/space/hardsuit/security/cryo
+/obj/machinery/suit_storage_unit/security/lightweight
+	suit_type = /obj/item/clothing/suit/space/hardsuit/security/lightweight
 	mask_type = /obj/item/clothing/mask/gas/sechailer
 
 /obj/machinery/suit_storage_unit/hos
@@ -70,8 +70,8 @@
 	mask_type = /obj/item/clothing/mask/gas
 	storage_type = /obj/item/watertank/atmos
 
-/obj/machinery/suit_storage_unit/atmos/cryo
-	suit_type = /obj/item/clothing/suit/space/hardsuit/engine/atmos/cryo
+/obj/machinery/suit_storage_unit/atmos/lightweight
+	suit_type = /obj/item/clothing/suit/space/hardsuit/engine/atmos/lightweight
 	mask_type = /obj/item/clothing/mask/gas
 	storage_type = /obj/item/watertank/atmos
 
@@ -83,8 +83,8 @@
 	suit_type = /obj/item/clothing/suit/space/hardsuit/mining
 	mask_type = /obj/item/clothing/mask/breath
 
-/obj/machinery/suit_storage_unit/mining/eva/cryo
-	suit_type = /obj/item/clothing/suit/space/hardsuit/mining/cryo
+/obj/machinery/suit_storage_unit/mining/eva/lightweight
+	suit_type = /obj/item/clothing/suit/space/hardsuit/mining/lightweight
 	mask_type = /obj/item/clothing/mask/breath
 
 /obj/machinery/suit_storage_unit/cmo
