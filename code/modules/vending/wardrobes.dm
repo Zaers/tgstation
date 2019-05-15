@@ -23,6 +23,7 @@
 					/obj/item/clothing/mask/bandana/red = 3,
 					/obj/item/clothing/under/rank/security/skirt = 3,
 					/obj/item/clothing/under/rank/security/grey = 3,
+					/obj/item/clothing/under/rank/security/imperial = 3,
 					/obj/item/clothing/under/pants/khaki = 3,
 					/obj/item/clothing/under/rank/security/blueshirt = 3)
 	premium = list(/obj/item/clothing/under/rank/security/navyblue = 3,
