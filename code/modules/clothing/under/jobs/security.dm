@@ -3,6 +3,7 @@
  *		Security
  *		Detective
  *		Navy uniforms
+ *		Imperial Uniform
  */
 
 /*
@@ -37,6 +38,13 @@
 	body_parts_covered = CHEST|GROIN|ARMS
 	can_adjust = FALSE //you know now that i think of it if you adjust the skirt and the sprite disappears isn't that just like flashing everyone
 
+/obj/item/clothing/under/rank/security/imperial
+	name = "tan security jumpsuit"
+	desc = "A tactical security jumpsuit with a full tan colour scheme."
+	icon_state = "imperial_s"
+	item_state = "imperial_s"
+	item_color = "imperial_s"
+	can_adjust = FALSE
 
 /obj/item/clothing/under/rank/warden
 	name = "security suit"
@@ -108,6 +116,13 @@
 	icon_state = "hosalt"
 	item_state = "bl_suit"
 	item_color = "hosalt"
+
+/obj/item/clothing/under/rank/head_of_security/commissar
+	name = "head of security's dark jumpsuit"
+	desc = "A stylish alternative to the normal head of security jumpsuit, but don't expect central command to tolerate you shooting your own officers."
+	icon_state = "commissar_s"
+	item_state = "commissar_s"
+	item_color = "commissar_s"
 
 /*
  * Navy uniforms
