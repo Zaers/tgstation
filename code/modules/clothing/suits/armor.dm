@@ -29,6 +29,18 @@
 	icon_state = "armor"
 	item_state = "armor"
 
+/obj/item/clothing/suit/armor/vest/flak
+	desc = "A green Type I armored vest that provides decent protection against most types of damage."
+	icon_state = "flakarmor"
+	item_state = "flakarmor"
+	custom_premium_price = 250
+
+/obj/item/clothing/suit/armor/vest/blueshirt/imperial
+	name = "large armor vest"
+	desc = "A large, yet comfortable piece of armor, protecting you from some threats."
+	icon_state = "imperialarmor"
+	item_state = "imperialarmor"
+
 /obj/item/clothing/suit/armor/vest/old
 	name = "degrading armor vest"
 	desc = "Older generation Type 1 armored vest. Due to degradation over time the vest is far less maneuverable to move in."
@@ -42,7 +54,7 @@
 	icon_state = "blueshift"
 	item_state = "blueshift"
 	custom_premium_price = 600
-	
+
 /obj/item/clothing/suit/armor/hos
 	name = "armored greatcoat"
 	desc = "A greatcoat enhanced with a special alloy for some extra protection and style for those with a commanding presence."
@@ -55,12 +67,24 @@
 	strip_delay = 80
 
 /obj/item/clothing/suit/armor/hos/trenchcoat
-	name = "armored trenchoat"
+	name = "armored trenchcoat"
 	desc = "A trenchcoat enhanced with a special lightweight kevlar. The epitome of tactical plainclothes."
 	icon_state = "hostrench"
 	item_state = "hostrench"
 	flags_inv = 0
 	strip_delay = 80
+
+/obj/item/clothing/suit/armor/hos/coat
+	name = "armored coat"
+	desc = "A stylish coat with a special lightweight kevlar. Has a dull gold eagle on the back."
+	icon_state = "commissar"
+	item_state = "commissar"
+
+/obj/item/clothing/suit/armor/hos/bright
+	name = "armored coat"
+	desc = "A stylish coat with a special lightweight kevlar. The epitome of tactical fashion."
+	icon_state = "commissar2"
+	item_state = "commissar2"
 
 /obj/item/clothing/suit/armor/vest/warden
 	name = "warden's jacket"

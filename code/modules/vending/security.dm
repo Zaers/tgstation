@@ -12,13 +12,17 @@
 					/obj/item/reagent_containers/food/snacks/donut = 12,
 					/obj/item/storage/box/evidence = 6,
 				    /obj/item/flashlight/seclite = 4,
-				    /obj/item/restraints/legcuffs/bola/energy = 7)
+				    /obj/item/restraints/legcuffs/bola/energy = 7,
+				    /obj/item/clothing/head/helmet/flak = 3)
 	contraband = list(/obj/item/clothing/glasses/sunglasses = 2,
 		              /obj/item/storage/fancy/donut_box = 2)
 	premium = list(/obj/item/storage/belt/security/webbing = 5,
 					/obj/item/coin/antagtoken = 1,
+					/obj/item/clothing/suit/armor/vest/flak = 3,
 					/obj/item/clothing/head/helmet/blueshirt = 1,
-					/obj/item/clothing/suit/armor/vest/blueshirt = 1)		
+					/obj/item/clothing/head/helmet/blueshirt/imperial = 3,
+					/obj/item/clothing/suit/armor/vest/blueshirt = 1,
+					/obj/item/clothing/suit/armor/vest/blueshirt/imperial = 3)
 	armor = list("melee" = 100, "bullet" = 100, "laser" = 100, "energy" = 100, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 100, "acid" = 50)
 	resistance_flags = FIRE_PROOF
 	default_price = 100

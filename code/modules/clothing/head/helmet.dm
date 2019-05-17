@@ -78,6 +78,13 @@
 	can_flashlight = TRUE
 	dog_fashion = null
 
+/obj/item/clothing/head/helmet/flak
+	name = "helmet"
+	desc = "Standard Security gear, Protects the head from impacts."
+	icon_state = "flakhelmet"
+	item_state = "flakhelmet"
+	custom_premium_price = 150
+
 /obj/item/clothing/head/helmet/old
 	name = "degrading helmet"
 	desc = "Standard issue security helmet. Due to degradation the helmet's visor obstructs the users ability to see long distances."
@@ -89,6 +96,12 @@
 	icon_state = "blueshift"
 	item_state = "blueshift"
 	custom_premium_price = 450
+
+/obj/item/clothing/head/helmet/blueshirt/imperial
+	name = "imperial helmet"
+	desc = "Standard issue security helmet. For Nanotrasen!"
+	icon_state = "imperialhelmet"
+	item_state = "imperialhelmet"
 
 /obj/item/clothing/head/helmet/riot
 	name = "riot helmet"
