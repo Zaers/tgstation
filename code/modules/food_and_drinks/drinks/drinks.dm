@@ -256,6 +256,7 @@
 	icon_state = "beer"
 	list_reagents = list("beer" = 30)
 	foodtype = GRAIN | ALCOHOL
+	spillable = TRUE //allows Reagents to splash upon smash
 
 /obj/item/reagent_containers/food/drinks/beer/light
 	name = "Carp Lite"
@@ -269,6 +270,7 @@
 	item_state = "beer"
 	list_reagents = list("ale" = 30)
 	foodtype = GRAIN | ALCOHOL
+	spillable = TRUE //allows Reagents to splash upon smash
 
 /obj/item/reagent_containers/food/drinks/sillycup
 	name = "paper cup"

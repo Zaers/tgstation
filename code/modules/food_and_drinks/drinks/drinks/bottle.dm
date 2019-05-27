@@ -13,6 +13,7 @@
 	righthand_file = 'icons/mob/inhands/misc/food_righthand.dmi'
 	var/const/duration = 13 //Directly relates to the 'knockdown' duration. Lowered by armor (i.e. helmets)
 	isGlass = TRUE
+	spillable = TRUE //allows Reagents to splash upon smash
 	foodtype = ALCOHOL
 
 
