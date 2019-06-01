@@ -4,5 +4,6 @@
     "map_file": "Junkstation.dmm",
 	"shuttles": {
 	    "cargo": "cargo_delta"
+		"emergency": "emergency_meta"
     }
 }
