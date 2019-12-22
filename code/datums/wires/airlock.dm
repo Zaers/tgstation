@@ -31,7 +31,7 @@
 	status += "The AI connection light is [A.aiControlDisabled || (A.obj_flags & EMAGGED) ? "off" : "on"]."
 	status += "The check wiring light is [A.safe ? "off" : "on"]."
 	status += "The timer is powered [A.autoclose ? "on" : "off"]."
-	status += "The speed light is [A.normalspeed ? "on" : "off"]."
+	status += "The speed light is [A.normalspeed ? "off" : "on"]."
 	status += "The emergency light is [A.emergency ? "on" : "off"]."
 	return status
 
