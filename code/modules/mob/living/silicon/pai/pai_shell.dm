@@ -29,6 +29,9 @@
 		if(!L.temporarilyRemoveItemFromInventory(card))
 			to_chat(src, "<span class='warning'>Error: Unable to expand to mobile form. Chassis is restrained by some device or person.</span>")
 			return FALSE
+	if(istype(loc?.loc, /obj/item/integrated_circuit/input/pAI_connector)) //you can only be installed it if you're in card form, so the loc will be the pai card and the loc of that will be the connector
+		var/obj/item/integrated_circuit/input/pAI_connector/connector = loc.loc
+		connector.RemovepAI()
 	forceMove(get_turf(card))
 	card.forceMove(src)
 	if(client)
