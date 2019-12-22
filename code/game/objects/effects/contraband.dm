@@ -659,12 +659,12 @@
 /obj/structure/sign/poster/flag/official/baguette
 	name = "French Flag"
 	desc = "Muuuuahaaaa the French."
-	icon_state = "flag8_legit"
+	icon_state = "flag9_legit"
 
 /obj/structure/sign/poster/flag/official/rico
 	name = "Puerto Rican Flag"
 	desc = "For the token shitskins aboard to feel good about."
-	icon_state = "flag9_legit"
+	icon_state = "flag10_legit"
 
 /obj/structure/sign/poster/flag/contraband
 	poster_item_name = "flag"
