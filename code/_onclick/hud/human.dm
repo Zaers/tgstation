@@ -223,6 +223,16 @@
 	inv_box.slot_id = SLOT_GLOVES
 	toggleable_inventory += inv_box
 
+
+	inv_box = new /obj/screen/inventory()
+	inv_box.name = "wrists"
+	inv_box.icon = ui_style
+	inv_box.icon_state = "wrists"
+	inv_box.screen_loc = ui_wrist
+	inv_box.slot_id = SLOT_WRIST
+	toggleable_inventory += inv_box
+
+
 	inv_box = new /obj/screen/inventory()
 	inv_box.name = "eyes"
 	inv_box.icon = ui_style
@@ -336,6 +346,9 @@
 		if(H.shoes)
 			H.shoes.screen_loc = ui_shoes
 			screenmob.client.screen += H.shoes
+		if(H.wrist)
+			H.wrist.screen_loc = ui_wrist
+			screenmob.client.screen += H.wrist
 		if(H.gloves)
 			H.gloves.screen_loc = ui_gloves
 			screenmob.client.screen += H.gloves

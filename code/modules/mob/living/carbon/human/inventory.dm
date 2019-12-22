@@ -38,6 +38,8 @@
 			return r_store
 		if(SLOT_S_STORE)
 			return s_store
+		if(SLOT_WRIST)
+			return wrist
 	return null
 
 /mob/living/carbon/human/proc/get_all_slots()
@@ -56,6 +58,7 @@
 		wear_id,
 		l_store,
 		r_store,
+		wrist,
 		w_uniform
 		)
 
@@ -131,6 +134,9 @@
 		if(SLOT_R_STORE)
 			r_store = I
 			update_inv_pockets()
+		if(SLOT_WRIST)
+			wrist = I
+			update_inv_wrists()
 		if(SLOT_S_STORE)
 			s_store = I
 			update_inv_s_store()
@@ -219,6 +225,10 @@
 		l_store = null
 		if(!QDELETED(src))
 			update_inv_pockets()
+	else if(I == wrist)
+		wrist = null
+		if(!QDELETED(src))
+			update_inv_wrists()
 	else if(I == s_store)
 		s_store = null
 		if(!QDELETED(src))

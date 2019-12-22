@@ -682,9 +682,21 @@
 
 /datum/action/item_action/kindleKicks
 	name = "Activate Kindle Kicks"
-	desc = "Kick you feet together, activating the lights in your Kindle Kicks."
+	desc = "Kick your feet together, activating the lights in your Kindle Kicks."
 	icon_icon = 'icons/mob/actions/actions_items.dmi'
 	button_icon_state = "kindleKicks"
+
+/datum/action/item_action/compactivate
+	name = "Activate Wrist COMP"
+	desc = "Access your wrist computer."
+
+/datum/action/item_action/compactivate/Trigger()
+	var/mob/living/L = owner
+	if(istype(target, /obj/item/modular_computer/wrist_comp) && istype(L))
+		var/obj/item/modular_computer/wrist_comp/comp = target
+		return comp.interact(L)
+	return ..()
+
 
 //Small sprites
 /datum/action/small_sprite

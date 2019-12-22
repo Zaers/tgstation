@@ -874,6 +874,14 @@
 	build_path = /obj/item/modular_computer/laptop/buildable
 	category = list("initial","Misc")
 
+/datum/design/wrist_comp
+	name = "Wrist Computer Frame"
+	id = "wrist_comp"
+	build_type = AUTOLATHE
+	materials = list(MAT_METAL = 10000, MAT_GLASS = 1000)
+	build_path = /obj/item/modular_computer/wrist_comp
+	category = list("initial","Misc")
+
 /datum/design/tablet
 	name = "Tablet Frame"
 	id = "tablet"

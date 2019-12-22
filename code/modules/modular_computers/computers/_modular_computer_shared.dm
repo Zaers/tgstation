@@ -60,4 +60,4 @@
 	if(printer_slot)
 		to_chat(user, "It has a printer installed.")
 		if(user_is_adjacent)
-			to_chat(user, "The printer's paper levels are at: [printer_slot.stored_paper]/[printer_slot.max_paper].</span>]")
+			to_chat(user, "The printer's paper levels are at: [printer_slot.stored_paper]/[printer_slot.max_paper].</span>")

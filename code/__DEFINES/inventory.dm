@@ -28,6 +28,7 @@
 #define ITEM_SLOT_POCKET		(1<<11) // this is to allow items with a w_class of WEIGHT_CLASS_NORMAL or WEIGHT_CLASS_BULKY to fit in pockets.
 #define ITEM_SLOT_DENYPOCKET	(1<<12) // this is to deny items with a w_class of WEIGHT_CLASS_SMALL or WEIGHT_CLASS_TINY to fit in pockets.
 #define ITEM_SLOT_NECK			(1<<13)
+#define ITEM_SLOT_WRIST			(1<<14)
 
 //SLOTS
 #define SLOT_BACK			1
@@ -51,8 +52,9 @@
 #define SLOT_IN_BACKPACK	18
 #define SLOT_LEGCUFFED		19
 #define SLOT_GENERC_DEXTROUS_STORAGE	20
+#define SLOT_WRIST 21
 
-#define SLOTS_AMT			20 // Keep this up to date!
+#define SLOTS_AMT			21 // Keep this up to date!
 
 //I hate that this has to exist
 /proc/slotdefine2slotbit(slotdefine) //Keep this up to date with the value of SLOT BITMASKS and SLOTS (the two define sections above)
@@ -84,11 +86,13 @@
 			. = ITEM_SLOT_ICLOTHING
 		if(SLOT_L_STORE, SLOT_R_STORE)
 			. = ITEM_SLOT_POCKET
+		if(SLOT_WRIST)
+			. = ITEM_SLOT_WRIST
 
 
 //Bit flags for the flags_inv variable, which determine when a piece of clothing hides another. IE a helmet hiding glasses.
 //Make sure to update check_obscured_slots() if you add more.
-#define HIDEGLOVES		(1<<0)
+#define HIDEGLOVES		(1<<0)  //Presume anything that covers gloves also hides wrist comps and the etc.?
 #define HIDESUITSTORAGE	(1<<1)
 #define HIDEJUMPSUIT	(1<<2)	//these first four are only used in exterior suits
 #define HIDESHOES		(1<<3)

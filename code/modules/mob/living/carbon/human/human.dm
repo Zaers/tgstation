@@ -176,6 +176,13 @@
 	else
 		dat += "<tr><td><B>Gloves:</B></td><td><A href='?src=[REF(src)];item=[SLOT_GLOVES]'>[(gloves && !(gloves.item_flags & ABSTRACT))		? gloves	: "<font color=grey>Empty</font>"]</A></td></tr>"
 
+
+	if(SLOT_WRIST in obscured)
+		dat += "<tr><td><font color=grey><B>Wrist:</B></font></td><td><font color=grey>Obscured</font></td></tr>"
+	else
+		dat += "<tr><td><B>Wrist:</B></td><td><A href='?src=[REF(src)];item=[SLOT_WRIST]'>[(wrist && !(wrist.item_flags & ABSTRACT))		? wrist	: "<font color=grey>Empty</font>"]</A></td></tr>"
+
+
 	if(SLOT_W_UNIFORM in obscured)
 		dat += "<tr><td><font color=grey><B>Uniform:</B></font></td><td><font color=grey>Obscured</font></td></tr>"
 	else

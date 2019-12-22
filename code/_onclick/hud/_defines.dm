@@ -144,6 +144,8 @@
 #define ui_iclothing "WEST:6,SOUTH+1:7"
 #define ui_oclothing "WEST+1:8,SOUTH+1:7"
 #define ui_gloves "WEST+2:10,SOUTH+1:7"
+#define ui_wrist "WEST+2:10,SOUTH+3:11"
+
 
 #define ui_glasses "WEST:6,SOUTH+3:11"
 #define ui_mask "WEST+1:8,SOUTH+2:9"

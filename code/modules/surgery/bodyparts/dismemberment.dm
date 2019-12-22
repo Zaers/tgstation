@@ -182,6 +182,11 @@
 			var/obj/screen/inventory/hand/R = C.hud_used.hand_slots["[held_index]"]
 			if(R)
 				R.update_icon()
+		if(ishuman(C))
+			var/mob/living/carbon/human/H = C
+			if(H.wrist)
+				H.dropItemToGround(H.wrist, TRUE)
+				H.update_inv_wrists()
 		if(C.gloves)
 			C.dropItemToGround(C.gloves, TRUE)
 		C.update_inv_gloves() //to remove the bloody hands overlay
@@ -200,6 +205,11 @@
 			var/obj/screen/inventory/hand/L = C.hud_used.hand_slots["[held_index]"]
 			if(L)
 				L.update_icon()
+		if(ishuman(C))
+			var/mob/living/carbon/human/H = C
+			if(H.wrist)
+				H.dropItemToGround(H.wrist, TRUE)
+				H.update_inv_wrists()
 		if(C.gloves)
 			C.dropItemToGround(C.gloves, TRUE)
 		C.update_inv_gloves() //to remove the bloody hands overlay

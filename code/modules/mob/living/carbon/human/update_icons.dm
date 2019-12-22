@@ -87,6 +87,7 @@ There are several things that need to be remembered:
 		update_inv_back()
 		update_inv_wear_suit()
 		update_inv_pockets()
+		update_inv_wrists()
 		update_inv_neck()
 		update_transform()
 		//mutations
@@ -396,6 +397,33 @@ There are several things that need to be remembered:
 			if(hud_used.hud_shown)
 				client.screen += r_store
 			update_observer_view(r_store)
+
+/mob/living/carbon/human/update_inv_wrists()
+	remove_overlay(WRIST_LAYER)
+
+	var/obj/screen/inventory/inv
+	if(client && hud_used)
+		inv = hud_used.inv_slots[SLOT_WRIST]
+		inv.update_icon()
+
+
+	var/mutable_appearance/wrist_overlay = overlays_standing[WRIST_LAYER]
+	if(wrist)
+		wrist.screen_loc = ui_wrist
+		if(client && hud_used && hud_used.hud_shown)
+			if(hud_used.inventory_shown)
+				client.screen += wrist
+		update_observer_view(wrist,1)
+		var/t_state = wrist.item_state //this is copied from the other update icon procs but it sure does look shonky
+		if(!t_state)
+			t_state = wrist.icon_state
+		overlays_standing[WRIST_LAYER] = wrist.build_worn_icon(state = t_state, default_layer = WRIST_LAYER, default_icon_file = 'icons/mob/wrists.dmi')
+		wrist_overlay = overlays_standing[WRIST_LAYER]
+		if(OFFSET_GLOVES in dna.species.offset_features)
+			wrist_overlay.pixel_x += dna.species.offset_features[OFFSET_WRISTS][1]
+			wrist_overlay.pixel_y += dna.species.offset_features[OFFSET_WRISTS][2]
+	overlays_standing[WRIST_LAYER] = wrist_overlay
+	apply_overlay(WRIST_LAYER)
 
 
 /mob/living/carbon/human/update_inv_wear_mask()

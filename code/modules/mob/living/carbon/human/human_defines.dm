@@ -37,6 +37,7 @@
 	var/obj/item/r_store = null
 	var/obj/item/l_store = null
 	var/obj/item/s_store = null
+	var/obj/item/wrist = null
 
 	var/hygiene = HYGIENE_LEVEL_NORMAL
 

@@ -55,6 +55,10 @@
 		if(hand_number)
 			msg += "<span class='warning'>[t_He] [t_has] [hand_number > 1 ? "" : "a"] blood-stained hand[hand_number > 1 ? "s" : ""]!</span>\n"
 
+	//wrists
+	if(wrist && !(SLOT_WRIST in obscured))
+		msg += "[t_He] [t_has] [wrist.get_examine_string(user)] on [t_his] wrist.\n"
+
 	//handcuffed?
 
 	//handcuffed?
